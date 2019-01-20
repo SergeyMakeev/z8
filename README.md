@@ -117,7 +117,7 @@ Syntax:
 ld op1, op2
 ```
 
-`op1` can be a constant value or CPU register which will be used to determine memory location to read from. `op2` should be a general purpose register which will contain value read from memory.
+`op1` should be a general purpose register which will contain value read from memory. `op2` can be a constant value or CPU register which will be used to determine memory location to read from. 
 
 
 Syntax:
