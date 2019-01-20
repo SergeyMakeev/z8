@@ -153,10 +153,10 @@ call | function call | 3
 ret | return from function | 3
 hlt | wait for interrupt (vsync) | -
 
-## Z8 input out ports reference
+## Z8 I/O ports reference
 
 | Port number | Type | Device | Description
---- | --- | ---
+--- | --- | --- | ---
 0 | read-only | Keyboard | Keyboard row #0 (1 2 3 4 5 6)
 1 | read-only | Keyboard | Keyboard row #1 (7 8 9 0 - =)
 2 | read-only | Keyboard | Keyboard row #2 (Q W E R T Y)
