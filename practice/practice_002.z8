@@ -1,0 +1,4 @@
+// move number 10 into register r0
+mov r0, 10
+// move number 5 into register r1
+mov r1, 5

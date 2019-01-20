@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="svg3805"
+   sodipodi:docname="Save.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata3811">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3809" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="5120"
+     inkscape:window-height="2755"
+     id="namedview3807"
+     showgrid="false"
+     inkscape:zoom="14.75"
+     inkscape:cx="8"
+     inkscape:cy="8"
+     inkscape:window-x="-13"
+     inkscape:window-y="-13"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3805" />
+  <style
+     id="style3797">.icon-canvas-transparent{opacity:0;fill:#f6f6f6}.icon-vs-out{fill:#f6f6f6}.icon-vs-fg{fill:#f0eff1}.icon-vs-action-blue{fill:#00539c}</style>
+  <path
+     class="icon-canvas-transparent"
+     d="M16 0v16H0V0h16z"
+     id="canvas" />
+  <path
+     class="icon-vs-out"
+     d="M16 2v14H2.586L0 13.414V2C0 .897.897 0 2 0h12c1.102 0 2 .897 2 2z"
+     id="outline" />
+  <path
+     class="icon-vs-fg"
+     d="M13 3v4H3V3h10zm-9 7v5h2v-3h2v3h4v-5H4z"
+     id="iconFg" />
+  <g
+     id="iconBg">
+    <path
+       class="icon-vs-action-blue"
+       d="M6 12h2v3H6v-3zm9-10v13h-3v-5H4v5H3l-2-2V2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-2 1H3v4h10V3z"
+       id="path3802" />
+  </g>
+</svg>

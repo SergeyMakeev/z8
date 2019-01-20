@@ -1,0 +1,256 @@
+body {
+    background-color: #282a36;
+}
+
+table {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+	font-size: 10px;
+	font-style: normal;
+    font-variant: normal;
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #555555;
+    color: #f8f8f2;
+    background-color: #1b1b1c
+  }
+
+  textarea {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+	font-size: 14px;
+	font-style: normal;
+    font-variant: normal;
+
+    outline: none;
+    resize: none;
+
+    height: 100%;
+    width: calc(100% - 20px);
+
+
+    color: #f8f8f2;
+    background-color: #1b1b1c
+  }
+
+
+.fixed_layout {
+  table-layout: fixed;
+}
+
+  .borderless {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+	font-size: 12px;
+	font-style: normal;
+    font-variant: normal;
+    width: 100%;
+    border-collapse: collapse;
+    border: 0px solid #555555;
+    color: #f8f8f2;
+    background-color: #232323
+  }
+
+  #editor { 
+    position: absolute;
+    top: 25px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#debug_log { 
+    position: absolute;
+    top: 870px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+#ide {
+    position:         absolute;
+    min-width:        280px;
+    border:           1px solid #999;
+    background:       #ddd;
+    border-radius:    13px;
+    margin-left:      0px;
+    margin-top:       10px;
+    margin-right:     15px;
+    overflow:         hidden;
+    box-shadow:       0px 4px 13px 0px rgba(0, 0, 0, 0.3);
+    height: 94%;
+    width: 280px;    
+}
+
+#computer {
+    position:         absolute;
+    min-width:        280px;
+    border:           1px solid #999;
+    background:       #ddd;
+    border-radius:    13px;
+    margin-left:      300px;
+    margin-top:       10px;
+    margin-right:     15px;
+    overflow:         hidden;
+    box-shadow:       0px 4px 13px 0px rgba(0, 0, 0, 0.3);
+    height: 94%;
+    width: 560px;    
+}
+
+#peripheral {
+    position:         absolute;
+    min-width:        280px;
+    border:           1px solid #999;
+    background:       #282a36;
+    border-radius:    13px;
+    margin-left:      880px;
+    margin-top:       10px;
+    margin-right:     15px;
+    overflow:         hidden;
+    box-shadow:       0px 4px 13px 0px rgba(0, 0, 0, 0.3);
+    height: 94%;
+    width: calc(100% - 920px);
+    display:inline-block;
+}
+
+
+
+.terminal_screen {
+    margin-left:      285px;
+    margin-top:       145px;
+    position:absolute;
+    z-index:1;
+}
+
+.terminal_skin {
+    margin-left:      1px;
+    margin-top:       1px;
+    position:absolute;
+    z-index:20;    
+}
+
+.reg {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+	font-size: 12px;
+	font-style: normal;
+    font-variant: normal;
+    color: #a0a0a0;
+}
+
+.addr {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+	font-size: 12px;
+	font-style: normal;
+    font-variant: normal;
+    color: #a0a0a0;
+}
+
+.value {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+	font-size: 10px;
+	font-style: normal;
+    font-variant: normal;
+    color: #e0e0e0;
+}
+
+
+.btn {
+    background-color: #2d2d30;
+    border: none;
+    color: white;
+    padding: 0px 0px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+	font-size: 14px;
+	font-style: normal;
+    font-variant: normal;
+    width: 20px;
+    height: 20px;
+    cursor:default;
+}
+
+.btn:hover:enabled {
+    background-color: #3e3e40;
+    border: none;
+}
+
+.btn2 {
+    background-color: #2d2d30;
+    border: none;
+    color: white;
+    padding: 0px 0px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+	font-size: 14px;
+	font-style: normal;
+    font-variant: normal;
+    width: 50px;
+    height: 20px;
+    cursor:default;
+}
+
+.btn2:hover:enabled {
+    background-color: #3e3e40;
+    border: none;
+}
+
+
+.disabled {
+    opacity: 0.2;
+}
+
+
+.btn_icon {
+    width: 16px;
+    height: 16px;
+  }
+
+button:focus {
+    outline:0;
+}
+
+
+
+@-webkit-keyframes changed_anim1 {
+    from { background-color: #363643; color: #f9b766; }
+    to { background-color: inherit; color:inherit; }
+}
+@-moz-keyframes changed_anim1 {
+    from { background-color: #363643; color: #f9b766; }
+    to { background-color: inherit; color:inherit; }
+}
+@-o-keyframes changed_anim1 {
+    from { background-color: #363643; color: #f9b766; }
+    to { background-color: inherit; color:inherit; }
+}
+@keyframes changed_anim1 {
+    from { background-color: #363643; color: #f9b766; }
+    to { background-color: inherit; color:inherit; }
+}
+.changed1 {
+    -webkit-animation: changed_anim1 3s normal forwards; /* Safari 4+ */
+    -moz-animation:    changed_anim1 3s normal forwards; /* Fx 5+ */
+    -o-animation:      changed_anim1 3s normal forwards; /* Opera 12+ */
+    animation:         changed_anim1 3s normal forwards; /* IE 10+ */
+}
+
+@-webkit-keyframes changed_anim2 {
+    from { background-color: #363643; color: #f9b766; }
+    to { background-color: inherit; color:inherit; }
+}
+@-moz-keyframes changed_anim2 {
+    from { background-color: #363643; color: #f9b766; }
+    to { background-color: inherit; color:inherit; }
+}
+@-o-keyframes changed_anim2 {
+    from { background-color: #363643; color: #f9b766; }
+    to { background-color: inherit; color:inherit; }
+}
+@keyframes changed_anim2 {
+    from { background-color: #363643; color: #f9b766; }
+    to { background-color: inherit; color:inherit; }
+}
+.changed2 {
+    -webkit-animation: changed_anim2 3s normal forwards; /* Safari 4+ */
+    -moz-animation:    changed_anim2 3s normal forwards; /* Fx 5+ */
+    -o-animation:      changed_anim2 3s normal forwards; /* Opera 12+ */
+    animation:         changed_anim2 3s normal forwards; /* IE 10+ */
+}

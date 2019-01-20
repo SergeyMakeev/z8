@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<header><title>Z8 : fantasy 8-bit system</title></header>
+<head>
+    <meta charset="UTF-8">
+    <script src="ace/ace.js"></script>
+    <script src="js/download.js"></script>
+    <script src="js/z8_ide.js"></script>
+    <script src="js/z8_cpu.js"></script>
+    <script src="js/z8_terminal.js"></script>
+    <script src="js/z8_keyboard.js"></script>
+    <script src="js/z8_gamepad.js"></script>
+    <link rel="stylesheet" href="css/z8.css">
+
+</head>
+
+<body onload="create_ide();z8_init();">
+
+
+<input type="file" id="file_dialog" accept=".z8" style="display:none" onchange="ide_handleFiles(this.files)">
+
+       
+<div id="ide">
+        <div>
+                <table class="borderless">
+                        <tr height="24px">
+                            <td width="16px"></td>
+
+                            <td width="22px">
+                                <div>
+                                    <button title="Open (Ctrl+O)" id="run" class="btn" onclick="ide_open();">
+                                        <img class="btn_icon" alt="Open" title="Open" src="img/open.svg">
+                                    </button>
+                                </div>
+                            </td>
+
+                            <td width="22px">
+                                <div>
+                                    <button title="Save (Ctrl+S)" id="run" class="btn" onclick="ide_save();">
+                                        <img class="btn_icon" alt="Save" title="Save" src="img/save.svg">
+                                    </button>
+                                </div>
+                            </td>
+
+                            <td width="16px"></td>
+
+
+                            <td width="22px">
+                                <div>
+                                    <button title="Run" id="run" class="btn" onclick="z8_run();">
+                                        <img class="btn_icon" alt="Run" title="Run" src="img/run.svg">
+                                    </button>
+                                </div>
+                            </td>
+
+                            <td width="22px">
+                                <div>
+                                    <button title="Stop" id="stop" class="btn" onclick="z8_stop_and_reset()">
+                                        <img class="btn_icon" alt="Stop" title="Stop" src="img/stop.svg">
+                                    </button>
+                                </div>
+                            </td>
+
+                            <td width="22px">
+                                <div>
+                                    <button title="Pause" id="pause" class="btn" onclick="z8_pause()">
+                                        <img class="btn_icon" alt="Pause" title="Pause" src="img/pause.svg">
+                                    </button>
+                                </div>
+                            </td>
+
+                            <td width="22px">
+                                <div>
+                                    <button title="Step cycle" id="step" class="btn" onclick="z8_cpu_step(1, true);">
+                                        <img class="btn_icon" alt="Step" title="Step" src="img/step.svg">
+                                    </button>
+                                </div>
+                            </td>
+
+                            <td width="22px">
+                                <div>
+                                    <button title="Step line" id="step2" class="btn" onclick="z8_cpu_step_instruction();">
+                                        <img class="btn_icon" alt="Step" title="Step" src="img/stepline.svg">
+                                    </button>
+                                </div>
+                            </td>
+
+                            <td></td>
+                                
+                        </tr>
+                </table>
+            </div> 
+<div id="editor">mov r0, 1
+mov r1, 2
+</div>   
+</div> 
+
+
+<div id="computer">
+
+        <div>
+            <table class="borderless">
+                    <tr height="24px">
+                        <td width="48px"></td>
+
+                        <td width="22px">
+                            <div>
+                                <button title="switch to decimal view" class="btn2" onclick="ide_update_view_type('dec');">
+                                    dec
+                                </button>
+                            </div>
+                        </td>
+
+                        <td width="22px">
+                            <div>
+                                <button title="switch to signed decimal view" class="btn2" onclick="ide_update_view_type('sgn');">
+                                    sgn
+                                </button>
+                            </div>
+                        </td>
+
+
+                        <td width="22px">
+                            <div>
+                                <button title="switch to hexadecimal view" class="btn2" onclick="ide_update_view_type('hex');">
+                                    hex
+                                </button>
+                            </div>
+                        </td>
+
+                        <td width="22px">
+                            <div>
+                                <button title="switch to binary view" class="btn2" onclick="ide_update_view_type('bin');">
+                                    bin
+                                </button>
+                            </div>
+                        </td>
+
+                        <td width="22px">
+                            <div>
+                                <button title="switch to ascii view" class="btn2" onclick="ide_update_view_type('ascii');">
+                                    ascii
+                                </button>
+                            </div>
+                        </td>
+                        
+
+                        <td></td>
+                            
+                    </tr>
+            </table>
+        </div> 
+    
+
+        <div>CPU - Central Processing Unit</div>
+        <table id="cpu_state_view" class="borderless">
+        </table>
+
+        <div>RAM - Random Access Memory</div>
+        <table id="memory_view" class="borderless fixed_layout">
+        </table>
+
+        <div>Input/Output Ports</div>
+        <table id="port_view" class="borderless fixed_layout">
+        </table>
+
+        <div>Debug log</div>
+
+        <div id="debug_log"></div>   
+
+</div>
+
+
+<div id="peripheral">
+</div>
+        
+
+
+</body>
