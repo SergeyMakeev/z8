@@ -81,7 +81,7 @@ Where `dst` should be a general purpouse register and `src` can be a general pur
 For example: instruction `mov r0, 0` copies 0 into register r0
 
 
-Another useful instruction called `add` which means addition. `add` instruction can sum two general purpose registers or register and constant and put results back into a register.
+Another useful instruction called `add` which means addition. `add` instruction can sum two general purpose registers or register and constant and put the result back into a register.
 
 Syntax:
 
@@ -109,7 +109,30 @@ RAM is a form of computer data storage which can store bits organized into bytes
 Z8 system is equipped by 256 bytes of memory. Modern computers usually have several billion bytes of memory (GigaBytes or GB)
 
 
+Let's try to do something practical with memory. Our CPU have to different instructions to work with the memory. `ld` instruction which means load from memory and `st` instruction which means store into memory
 
+Syntax:
+
+```
+ld op1, op2
+```
+
+`op1` can be a constant value or CPU register which will be used to determine memory location to read from. `op2` should be a general purpose register which will contain value read from memory.
+
+
+Syntax:
+
+```
+st op1, op2
+```
+
+`op1` can be a constant value or CPU register which will be used to determine memory location to write. `op2` can be a constant or register; this value will be written into memory.
+
+
+Practical work:
+
+* Write the value 13 to the memory byte with the address 200 ([practice_004.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_004&code=practice/practice_004.z8))
+* Load value from memory with address 200; Add 5 to this value and write the result back to the memory. ([practice_005.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_004&code=practice/practice_005.z8))
 
 to be continued ...
 
