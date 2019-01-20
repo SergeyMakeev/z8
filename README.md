@@ -165,7 +165,9 @@ hlt | wait for interrupt (vsync) | -
 ## Z8 IDE useful extensions
 
 `//` single line comment
+
 `#def` preprocessor definition
+
 `print` debug print command
 
 
