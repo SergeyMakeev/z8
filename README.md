@@ -114,6 +114,15 @@ Z8 system is equipped by 256 bytes of memory. Modern computers usually have seve
 to be continued ...
 
 
+## Z8 Hardware specifications
+
+CPU: Z8 8-bit cpu
+Frequency: 0.0512 MHz (51200 Hz)
+
+Monitor:
+Resolution: 256 x 192 pixels or 16 x 12 characters
+Regresh rate: 25 Hz
+Colors: 16
 
 ## Z8 instruction reference
 
@@ -153,6 +162,13 @@ call | function call | 3
 ret | return from function | 3
 hlt | wait for interrupt (vsync) | -
 
+## Z8 IDE useful extensions
+
+`//` single line comment
+`#def` preprocessor definition
+`print` debug print command
+
+
 ## Z8 I/O ports reference
 
 | Port number | Type | Device | Description
@@ -189,3 +205,10 @@ hlt | wait for interrupt (vsync) | -
 29 | write-only | GPU | Sprite #3, position Y
 30 | write-only | GPU | Sprite #3, sprite index
 31 |  | None | Reserved
+
+## Z8 Color table (Palette)
+
+## Z8 Character Set
+
+
+## Z8 Sprite Set
