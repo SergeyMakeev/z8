@@ -95,9 +95,9 @@ For example: instruction `add r0, 1` add the value stored in the register `r0` a
 
 
 Practical work:
- * Put number 10 into the register r0 ([practice_001.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_001&code=practice/practice_001.z8))
- * Put number 5 into the register r1 ([practice_002.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_002&code=practice/practice_002.z8))
- * Add register r0 and r1 ([practice_003.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_003&code=practice/practice_003.z8))
+ * Put number 10 into the register r0 ([practice_001.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_001&code==https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_001.z8))
+ * Put number 5 into the register r1 ([practice_002.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_002&code==https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_002.z8))
+ * Add register r0 and r1 ([practice_003.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_003&code==https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_003.z8))
 
 Five registers are definitely not enough to create something serious that why each computer equipped with RAM module.
 
@@ -131,8 +131,8 @@ st op1, op2
 
 Practical work:
 
-* Write the value 13 to the memory byte with the address 200 ([practice_004.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_004&code=practice/practice_004.z8))
-* Load value from memory with address 200; Add 5 to this value and write the result back to the memory. ([practice_005.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_004&code=practice/practice_005.z8))
+* Write the value 13 to the memory byte with the address 200 ([practice_004.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_004&code==https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_004.z8))
+* Load value from memory with address 200; Add 5 to this value and write the result back to the memory. ([practice_005.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_005&code=https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_005.z8))
 
 to be continued ...
 
