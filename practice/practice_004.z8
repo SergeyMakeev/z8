@@ -1,0 +1,9 @@
+// move number 200 into r0
+mov r0, 200
+// move number 13 into r1
+mov r1, 13
+// store value from r1
+// in memory addres from r0
+st r0, r1
+
+// can this program be simplified?

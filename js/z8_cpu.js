@@ -488,12 +488,12 @@ class Z8CPU {
         // trim spaces from begin/end
         line = line.trim(); 
 
-        // remove all double spaces
-        while(line.indexOf('  ')!=-1) line.replace('  ',' '); 
-
         if (!line.startsWith('#def')) {
             return;
         }
+
+        // remove all double spaces
+        while(line.indexOf('  ')!=-1) line.replace('  ',' '); 
 
         line = line.slice(5);
         var n = line.indexOf(' ');

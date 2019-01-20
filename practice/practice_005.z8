@@ -1,0 +1,16 @@
+// move number 200 into r0
+mov r0, 200
+// load value from
+//    memory addres from r0
+// and put results into r1
+ld r1, r0
+
+// add register r1 and 5
+// and put result back into r1
+add r1, 5
+
+// store value from r1
+// in memory addres from r0
+st r0, r1
+
+// can this program be simplified?
