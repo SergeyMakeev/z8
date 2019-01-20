@@ -131,7 +131,7 @@ st op1, op2
 
 Practical work:
 
-* Write the value 13 to the memory byte with the address 200 ([practice_004.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_004&code==https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_004.z8))
+* Write the value 13 to the memory byte with the address 200 ([practice_004.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_004&code=https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_004.z8))
 * Load value from memory with address 200; Add 5 to this value and write the result back to the memory. ([practice_005.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_005&code=https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_005.z8))
 
 to be continued ...
