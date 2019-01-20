@@ -3,13 +3,13 @@
 ## What is Z8
 Z8 is a fantasy 8-bit system similar to the following fantasy computers:
 
-Pico-8
+*Pico-8*
 https://www.lexaloffle.com/pico-8.php
 
-nano JAMMER
+*nano JAMMER*
 https://morgan3d.github.io/nano/doc/specification.md.html
 
-SHENZHEN I/O
+*SHENZHEN I/O*
 https://store.steampowered.com/app/504210/SHENZHEN_IO/
 
 The main difference from systems above is that Z8 was designed to teach my kids how to program and not as a puzzle/game.
