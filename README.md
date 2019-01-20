@@ -112,3 +112,44 @@ Z8 system is equipped by 256 bytes of memory. Modern computers usually have seve
 
 
 to be continued ...
+
+
+
+## Z8 instruction reference
+
+| Mnemonic | Description | Cycles count
+--- | --- | ---
+mov | move | 1
+ld | load from memory | 2
+st | store to memory | 2
+add | add |1
+ads | add saturated | 1
+sub | subtract | 1
+sbs | subtract saturated | 1
+mul | multiply saturated | 2
+div | divide | 2
+mod | modulo | 2
+sl | shift left | 1
+sr | shift right | 1
+and | bitwise and | 1
+or | bitwise or | 1
+xor | bitwise xor | 1
+cmp | unsigned comparison | 1
+cps | signed comparison | 1
+tst | test (bitwise comparison) | 1
+jmp | jump | 1
+jg | jump if greater | 1
+jge | jump if greater or equal | 1
+jl | jump if less | 1
+jle | jump if less or equal | 1
+je | jump if equal | 1
+jne | jump if not equal | 1
+nop | no operation | 1
+out | io port out | 3
+in | io port in | 3
+push | push to stack | 2
+pop | pop from stack | 2
+call | function call | 3
+ret | return from function | 3
+hlt | wait for interrupt (vsync) | -
+
