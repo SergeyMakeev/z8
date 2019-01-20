@@ -95,7 +95,7 @@ For example: instruction `add r0, 1` add the value stored in the register `r0` a
 
 
 Practical work:
- * Put number 10 into the register r0 [practice_001.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_001&code=practice/practice_001.z8)
+ * Put number 10 into the register r0 ([practice_001.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_001&code=practice/practice_001.z8))
  * Put number 5 into the register r1 (practice_002.z8)
  * Add register r0 and r1  (practice_003.z8)
 
