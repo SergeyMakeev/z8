@@ -1,0 +1,28 @@
+// letter 'H'
+st 0, 72
+// letter 'E'
+st 1, 69
+// letter 'L'
+st 2, 76
+// letter 'L'
+st 3, 76
+// letter 'O'
+st 4, 79
+// letter 'W'
+st 6, 87
+// letter 'W'
+st 7, 79
+// letter 'W'
+st 8, 82
+// letter 'W'
+st 9, 76
+// letter 'W'
+st 10, 68
+// letter '!'
+st 11, 33
+
+// wait unitl GPU refresh
+hlt
+
+// Try to draw the same text
+//          but one line down
