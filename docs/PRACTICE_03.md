@@ -2,6 +2,8 @@
 
 Z8 CPU has several instructions to work with the I/O ports. `out` instruction which is means send a value to port and `in` instruction which is means receive value from a port.
 
+### Output to Port (out)
+
 Syntax:
 
 ```
@@ -10,7 +12,9 @@ out op1, op2
 
 `op1` can be a constant value or CPU register which will be used to determine port number to write. `op2` can be a constant or register; this value will be written into port.
 
+---
 
+### Input from Port (in)
 
 Syntax:
 
@@ -20,7 +24,9 @@ in op1, op2
 
 `op1` should be a general purpose register which will contain value read from memory. `op2` can be a constant value or CPU register which will be used to determine port number to read from. 
 
+---
 
+### Halt execution and wait for perephiral devices (hlt)
 
 `hlt` instruction means halt. The CPU will stop executing commands until peripheral devices read the new values from writable I/O ports and update readable I/O port values.
 
@@ -30,8 +36,9 @@ Syntax:
 hlt
 ```
 
+---
 
-Practical work:
+### Practical work:
 
 I/O port #11 controls which color be used as a border and background color on screen.
 
