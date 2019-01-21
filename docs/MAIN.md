@@ -79,6 +79,16 @@ Z8 CPU has 32 I/O ports used by different devices.
 Let's do something practical with I/O ports. 
 [Press here to goto to the third practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_03.md)
 
+
+## Graphics Processing Unit (GPU) 
+
+A Graphics Processor Unit is a computer inside a computer. The specialized unit that is designed to work with 2D or 3D graphics and display the result on the monitor. May have its own dedicated memory (Video RAM or VRAM) or may use same memory as the CPU (shared memory).
+
+Z8 GPU uses memory shared with the main CPU. Our GPU can display memory in the form of characters on the screen, where each character represented by memory byte. The number of characters that the GPU is capable of displaying on the screen 16 in width and 12 in height. The bytes from memory address 0..192 will be displayed on the screen as a characters in order from left to right and from top to bottom.
+
+Let's do something practical with GPU.
+[Press here to goto to the fourth practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_04.md)
+
 to be continued ...
 
 
