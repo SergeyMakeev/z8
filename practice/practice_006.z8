@@ -1,0 +1,19 @@
+// move number 240 into
+//   I\O port 11
+out 11, 240
+
+// wait until peripheral
+//  device read the new value
+hlt
+
+
+// try to write another
+// number into this I/O port
+// 240 (red)
+// 241 (green)
+// 242 (blue)
+// 243 (magenta)
+// 244 (yellow)
+// 245 (cyan)
+// 246 (white)
+// 247 (black)

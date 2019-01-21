@@ -1,0 +1,17 @@
+// Flashing border
+out 11, 240
+hlt
+out 11, 241
+hlt
+out 11, 242
+hlt
+out 11, 243
+hlt
+out 11, 244
+hlt
+out 11, 245
+hlt
+out 11, 246
+hlt
+out 11, 247
+hlt
