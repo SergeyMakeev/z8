@@ -103,6 +103,5 @@ This instruction transfers program control to a point determined by the label if
 
 ### Practical work:
 
-
-* Cherries ([practice_010.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_010&code=https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_10.z8))
-* Bouncing ghost ([practice_011.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_011&code=https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_11.z8))
+* Cherries ([practice_010.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_010&code=https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_010.z8))
+* Bouncing ghost ([practice_011.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_011&code=https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_011.z8))
