@@ -86,6 +86,21 @@ Let's try to do something practical with memory.
 [Press here to goto to the second practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_02.md)
 
 
+### Input and output ports (I/O ports)
+
+Input and output ports (I/O ports)
+
+I/O ports are a method of performing communications between CPU and other peripheral devices such as Keyboard, Gamepad, etc. I/O ports are another type of data storage. Unlike RAM and CPU registers I/O port values can be changed by peripheral devices even without CPU. Each peripheral device associated with one or more I/O ports.
+
+Peripheral devices usually run slower than the CPU, so a certain number of processor cycles must pass before the peripheral device sees the port changes.
+
+There is a special instruction `hlt` which allows CPU to wait until all peripheral devices are able to see the I/O port changes
+
+Z8 CPU has 32 I/O ports used by different devices.
+
+Let's try to do something practical with I/O ports. 
+[Press here to goto to the third practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_03.md)
+
 to be continued ...
 
 
