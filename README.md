@@ -69,37 +69,10 @@ Questions:
 
 
 
-Let's try to do something practical. Our first instruction will be instruction called `mov` which means move. `mov` instruction copies data between two registers or copies data from constant into a register.
+But enough theory, let's do something practical.
+[Press here to goto to the first practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_01.md
 
-Syntax:
-
-```
-mov dst, src
-```
-
-Where `dst` should be a general purpouse register and `src` can be a general purpouse register or constant.
-For example: instruction `mov r0, 0` copies 0 into register r0
-
-
-Another useful instruction called `add` which means addition. `add` instruction can sum two general purpose registers or register and constant and put the result back into a register.
-
-Syntax:
-
-```
-add op1, op2
-```
-
-Where `op1` should be a general purpouse register and `op2` can be a general purpouse register or constant.
-For example: instruction `add r0, 1` add the value stored in the register `r0` and the constant `1` and put the result back into register `r0`
-
-
-
-Practical work:
- * Put number 10 into the register r0 ([practice_001.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_001&code=https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_001.z8))
- * Put number 5 into the register r1 ([practice_002.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_002&code=https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_002.z8))
- * Add register r0 and r1 ([practice_003.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_003&code=https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_003.z8))
-
-Five registers are definitely not enough to create something serious that why each computer equipped with RAM module.
+Five registers are definitely not enough to create something serious that why each computer equipped with RAM module (see bellow).
 
 
 ### Random-access memory (RAM)
@@ -109,31 +82,13 @@ RAM is a form of computer data storage which can store bits organized into bytes
 Z8 system is equipped by 256 bytes of memory. Modern computers usually have several billion bytes of memory (GigaBytes or GB)
 
 
-Let's try to do something practical with memory. Our CPU have to different instructions to work with the memory. `ld` instruction which means load from memory and `st` instruction which means store into memory
+Let's try to do something practical with memory. 
+[Press here to goto to the second practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_01.md
 
-Syntax:
-
-```
-ld op1, op2
-```
-
-`op1` should be a general purpose register which will contain value read from memory. `op2` can be a constant value or CPU register which will be used to determine memory location to read from. 
-
-
-Syntax:
-
-```
-st op1, op2
-```
-
-`op1` can be a constant value or CPU register which will be used to determine memory location to write. `op2` can be a constant or register; this value will be written into memory.
-
-
-Practical work:
-
-* Write the value 13 to the memory byte with the address 200 ([practice_004.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_004&code=https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_004.z8))
-* Load value from memory with address 200; Add 5 to this value and write the result back to the memory. ([practice_005.z8](https://sergeymakeev.github.io/z8/index.html?ls=z8_005&code=https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/practice_005.z8))
 
 to be continued ...
 
 
+
+
+[Z8 System Specs](https://github.com/SergeyMakeev/z8/blob/master/docs/SPECS.md
