@@ -1,4 +1,4 @@
-## Practical suite 02
+## Practical suite 03
 
 Z8 CPU has several instructions to work with the I/O ports. `out` instruction which is means send a value to port and `in` instruction which is means receive value from a port.
 
