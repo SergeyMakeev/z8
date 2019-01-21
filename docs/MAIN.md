@@ -136,6 +136,9 @@ Colors. Sprites.
 
 ## Z8 games
 
+Movable sprite with collisions
+...
+
 ## Z8 Sandbox
 
 [Sandbox](https://sergeymakeev.github.io/z8/index.html?ls=sandbox)
