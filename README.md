@@ -19,6 +19,9 @@ Z8 was made using the following principles:
 - To be as simple as possible (everything should fit into one screen. Including IDE, Debugger, Screen, Memory dump, etc.) 
 - To be as much close to real hardware as possible. Most of the principles and knowledge you will get while working with Z8 must be applied in real life. Of course, I cut some corners to simplify the learning process, but the main principles the same as for real hardware.
 
+## Screenshot
+
+![Screenshot](https://raw.githubusercontent.com/SergeyMakeev/z8/master/screens/z8_screen.png)
 
 ## Documentation
 
