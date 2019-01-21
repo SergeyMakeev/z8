@@ -89,8 +89,6 @@ Z8 GPU uses memory shared with the main CPU. Our GPU can display memory in the f
 Let's do something practical with GPU.
 [Press here to goto to the fourth practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_04.md)
 
-to be continued ...
-
 ## More advanced CPU instructions
 
 Most of the programs do not simply consist of a series of instructions that are consecutively executed, but there are many places where you need to decide which way to take. For this purpose, there are CPU instructions for checking the value (comparison) and instructions for jumping to another part of the program depending on the result of the comparison (conditional jump). 
@@ -122,7 +120,9 @@ hlt
 Let's play with this a little bit more.
 [Press here to goto to the fifth practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_05.md)
 
+## Keyboard
 
+to be continued ...
 
 
 
