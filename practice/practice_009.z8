@@ -1,0 +1,27 @@
+// letter 98 look like ghost!
+st 0, 98
+hlt
+
+st 0, 0
+st 1, 98
+hlt
+
+st 1, 0
+st 2, 98
+hlt
+
+st 2, 0
+st 3, 98
+hlt
+
+st 3, 0
+st 4, 98
+hlt
+
+st 4, 0
+st 5, 98
+hlt
+
+st 5, 0
+st 6, 98
+hlt
