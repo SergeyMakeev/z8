@@ -124,6 +124,9 @@ Let's play with this a little bit more.
 
 to be continued ...
 
+## Gamepad
+
+## Advanced GPU usage
 
 
 # System specs
