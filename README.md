@@ -70,7 +70,7 @@ Questions:
 
 
 But enough theory, let's do something practical.
-[Press here to goto to the first practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_01.md
+[Press here to goto to the first practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_01.md)
 
 Five registers are definitely not enough to create something serious that why each computer equipped with RAM module (see bellow).
 
@@ -83,7 +83,7 @@ Z8 system is equipped by 256 bytes of memory. Modern computers usually have seve
 
 
 Let's try to do something practical with memory. 
-[Press here to goto to the second practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_01.md
+[Press here to goto to the second practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_02.md)
 
 
 to be continued ...
@@ -91,4 +91,4 @@ to be continued ...
 
 
 
-[Z8 System Specs](https://github.com/SergeyMakeev/z8/blob/master/docs/SPECS.md
+[Z8 System Specs](https://github.com/SergeyMakeev/z8/blob/master/docs/SPECS.md)
