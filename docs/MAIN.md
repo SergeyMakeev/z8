@@ -91,6 +91,39 @@ Let's do something practical with GPU.
 
 to be continued ...
 
+## More advanced CPU instructions
+
+Most of the programs do not simply consist of a series of instructions that are consecutively executed, but there are many places where you need to decide which way to take. For this purpose, there are CPU instructions for checking the value (comparison) and instructions for jumping to another part of the program depending on the result of the comparison (conditional jump). 
+
+```
+// Initial value
+mov r0, 0
+
+// This is the label which is not an actual instruction.
+
+// The label purpose is to determine the jump target location in our program.
+my_label:
+
+  // Letter 96 look like Cherry!
+  st r0, 96
+  
+  add r0, 1
+  
+  // Compare value in register r0 and number 31 and put comparison
+  // result into a special CPU 'state' register.
+  cmp r0, 31
+  
+// Jump to label if comparison result is less or equal
+jle my_label
+
+hlt
+```
+
+Let's play with this a little bit more.
+[Press here to goto to the fifth practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_05.md)
+
+
+
 
 
 # System specs
