@@ -120,14 +120,25 @@ hlt
 Let's play with this a little bit more.
 [Press here to goto to the fifth practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_05.md)
 
+to be continued ...
+
 ## Keyboard
 
-to be continued ...
+Ports / rows. Movable sprite.
 
 ## Gamepad
 
+Gamepad ports. Movable sprite for gamepad.
+
 ## Advanced GPU usage
 
+Colors. Sprites.
+
+## Z8 games
+
+## Z8 Sandbox
+
+[Sandbox](https://sergeymakeev.github.io/z8/index.html?ls=sandbox)
 
 # System specs
 [Z8 System Specs](https://github.com/SergeyMakeev/z8/blob/master/docs/SPECS.md)
