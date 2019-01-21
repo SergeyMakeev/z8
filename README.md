@@ -82,7 +82,7 @@ RAM is a form of computer data storage which can store bits organized into bytes
 Z8 system is equipped by 256 bytes of memory. Modern computers usually have several billion bytes of memory (GigaBytes or GB)
 
 
-Let's try to do something practical with memory. 
+Let's do something practical with memory. 
 [Press here to goto to the second practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_02.md)
 
 
@@ -98,7 +98,7 @@ There is a special instruction `hlt` which allows CPU to wait until all peripher
 
 Z8 CPU has 32 I/O ports used by different devices.
 
-Let's try to do something practical with I/O ports. 
+Let's do something practical with I/O ports. 
 [Press here to goto to the third practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_03.md)
 
 to be continued ...
