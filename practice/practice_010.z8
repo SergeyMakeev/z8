@@ -1,0 +1,30 @@
+// Initial value
+mov r0, 0
+
+// This is the label which is not
+// an actual instruction.
+
+// The label purpose is to 
+// determine the jump target 
+// location in our program.
+my_label:
+
+  // Letter 96 look like cherry!
+  st r0, 96
+  
+  add r0, 1
+  
+  // Compare value in register
+  // r0 and 31 and put comparison
+  // result into a special
+  // 'state' register.
+  cmp r0, 31
+  
+// Jump to label if comparison 
+// result is less or equal
+jle my_label
+
+hlt
+
+
+// Can you draw more cherries?
