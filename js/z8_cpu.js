@@ -428,6 +428,10 @@ class Z8CPU {
     }
 
     emit_terminate(line_num) {
+
+        // force update terminal (to display current results)
+        z8_update_terminal();
+
         var editor = ace.edit("editor");
 
         var s = this.state;

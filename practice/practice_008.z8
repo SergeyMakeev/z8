@@ -21,8 +21,6 @@ st 10, 68
 // letter '!'
 st 11, 33
 
-// wait unitl GPU refresh
-hlt
-
+// TODO
 // Try to draw the same text
 //          but one line down

@@ -10,7 +10,7 @@ function get_ls_storage_name() {
     return lsName;
 }
 
-function copy_program_to_ls_if_need() {
+function copy_program_to_ls_if_need(forceLoad) {
 
     var codeUrl = getParam("code");
     if (codeUrl) {
@@ -20,7 +20,7 @@ function copy_program_to_ls_if_need() {
         if (ide_supports_ls()) {
 
             var src_text = localStorage.getItem(get_ls_storage_name());
-            if (src_text) {
+            if (src_text && forceLoad == false) {
                 // there is something already in local storage
                 log_always("Can't load from URL. LS '" + get_ls_storage_name() + "' already contain something.");
                 return;
@@ -71,7 +71,7 @@ function create_ide() {
         autoScrollEditorIntoView: true
     });
 
-    copy_program_to_ls_if_need();
+    copy_program_to_ls_if_need(false);
 
     // load save source code
     if (ide_supports_ls()) {
@@ -442,6 +442,12 @@ function ide_handleFiles(files) {
 }
 
 function ide_open() {
+
+    var codeUrl = getParam("code");
+    if (codeUrl) {
+        copy_program_to_ls_if_need(true);
+        return;
+    }
 
     var input = document.getElementById('file_dialog');
     input.click();

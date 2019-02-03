@@ -2,11 +2,7 @@
 //   I\O port 11
 out 11, 240
 
-// wait until peripheral
-//  device read the new value
-hlt
-
-
+// TODO
 // try to write another
 // number into this I/O port
 // 240 (red)

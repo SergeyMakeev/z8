@@ -24,7 +24,5 @@ my_label:
 // result is less or equal
 jle my_label
 
-hlt
-
-
+// TODO
 // Can you draw more cherries?
