@@ -86,6 +86,13 @@ A Graphics Processor Unit is a computer inside a computer. The specialized unit 
 
 Z8 GPU uses memory shared with the main CPU. Our GPU can display memory in the form of characters on the screen, where each character represented by memory byte. The number of characters that the GPU is capable of displaying on the screen 16 in width and 12 in height. The bytes from memory address 0..192 will be displayed on the screen as a characters in order from left to right and from top to bottom.
 
+The computer monitor can't immediately display changes which you made in memory.  Usually, the monitor can update image only a few dozen times per second. This is called monitor refresh rate. Z8 monitor refresh rate is 25 frames per second. Modern monitors refresh rate is 60-144 times per second or even 240 times per second!
+
+
+We already know that there is a special instruction `hlt` which allows CPU to wait until all peripheral devices (including the monitor) update their status.
+
+So if we want to see our changes which we made in memory, we have to execute `hlt` instruction.
+
 Let's do something practical with GPU.
 [Press here to goto to the fourth practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_04.md)
 
