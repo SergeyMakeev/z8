@@ -1,0 +1,71 @@
+// x-coordinate
+st 193, 0
+// y-coordinate
+st 194, 0
+
+start:
+
+// load y to r0
+ld r0, 194
+// load x to r1
+ld r1, 193
+
+// copy r0 to r3 (old_y)
+// copy r1 to r4 (old_x)
+mov r3, r0
+mov r4, r1
+
+// read keyboard port #9 to r2
+in r2, 9
+
+// left
+cmp r2, 1
+jne right
+sub r1, 1
+
+// right
+right:
+cmp r2, 2
+jne down
+add r1, 1
+
+//down
+down:
+cmp r2, 8
+jne up
+add r0, 1
+
+//up
+up:
+cmp r2, 4
+jne draw
+sub r0, 1
+
+draw:
+
+// store new x and y into memory
+st 194, r0
+st 193, r1
+
+// r3 = old_y * 16 + old_x
+// now we have memory address
+// from coordinates (old_x, old_y)
+mul r3, 16
+add r3, r4
+
+// clear old sprite
+st r3, 0
+
+// r0 = y * 16 + x
+// now we have memory address
+// from coordinates (x,y)
+mul r0, 16
+add r0, r1
+
+// draw ghost sprite
+st r0, 98
+
+hlt
+hlt
+
+jmp start
