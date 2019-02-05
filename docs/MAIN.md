@@ -133,9 +133,13 @@ to be continued ...
 
 Ports / rows. Movable sprite.
 
+[Press here to goto to the sixth practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_06.md)
+
 ## Gamepad
 
 Gamepad ports. Movable sprite for gamepad.
+
+[Press here to goto to the seventh practical work suite.](https://github.com/SergeyMakeev/z8/blob/master/docs/PRACTICE_07.md)
 
 ## Advanced GPU usage
 
