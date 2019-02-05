@@ -113,11 +113,9 @@ table {
     display:inline-block;
 }
 
-
-
 .terminal_screen {
-    margin-left:      285px;
-    margin-top:       145px;
+    margin-left:      75px;
+    margin-top:       65px;
     position:absolute;
     z-index:1;
 }

@@ -80,7 +80,7 @@ function log_error(msg) {
 }
 
 function log_always(msg) {
-    console.log(msg);
+   // console.log(msg);
 }
 
 function wrap_to_byte(v) {
