@@ -94,6 +94,10 @@ hlt | wait for interrupt (vsync) | -
 
 ## Z8 Color table (Palette)
 
+| Index | Color | Name
+--- | --- | --- 
+0 | ![#800000](https://placehold.it/15/80000/000000?text=+) `#800000` | Dark red
+
 ## Z8 Character Set
 
 
