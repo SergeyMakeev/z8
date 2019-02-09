@@ -96,7 +96,22 @@ hlt | wait for interrupt (vsync) | -
 
 | Index | Color | Name
 --- | --- | --- 
-0 | ![#800000](https://placehold.it/15/80000/000000?text=+) `#800000` | Dark red
+0 | ![#800000](https://placehold.it/15/800000/000000?text=+) `#800000` | Red
+1 | ![#008000](https://placehold.it/15/008000/000000?text=+) `#008000` | Green
+2 | ![#000080](https://placehold.it/15/000080/000000?text=+) `#000080` | Blue
+3 | ![#800080](https://placehold.it/15/800080/000000?text=+) `#800080` | Magenta
+4 | ![#808000](https://placehold.it/15/808000/000000?text=+) `#808000` | Yellow
+5 | ![#008080](https://placehold.it/15/008080/000000?text=+) `#008080` | Cyan
+6 | ![#808080](https://placehold.it/15/808080/000000?text=+) `#808080` | White
+7 | ![#000000](https://placehold.it/15/000000/000000?text=+) `#000000` | Black
+8 | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) `#ff0000` | Bright Red
+9 | ![#00ff00](https://placehold.it/15/00ff00/000000?text=+) `#00ff00` | Bright Green
+10 | ![#0000ff](https://placehold.it/15/0000ff/000000?text=+) `#0000ff` | Bright BLue
+11 | ![#ff00ff](https://placehold.it/15/ff00ff/000000?text=+) `#ff00ff` | Bright Magenta
+12 | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) `#ffff00` | Bright Yellow
+13 | ![#00ffff](https://placehold.it/15/00ffff/000000?text=+) `#00ffff` | Bright Cyan
+14 | ![#ffffff](https://placehold.it/15/ffffff/000000?text=+) `#ffffff` | Bright White
+15 | ![#202020](https://placehold.it/15/202020/000000?text=+) `#202020` | Bright Black
 
 ## Z8 Character Set
 
