@@ -2,6 +2,29 @@ body {
     background-color: #282a36;
 }
 
+a {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+	font-size: 14px;
+	font-style: normal;
+    font-variant: normal;
+}
+
+ a:link {
+    color: #a0a0a0;
+ }
+  
+ a:visited {
+    color: #a0a0a0;
+ }
+  
+ a:hover {
+    color: #ffffff;
+ }
+  
+ a:active {
+    color: #a0a0a0;
+ } 
+
 table {
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
 	font-size: 10px;
