@@ -27,4 +27,6 @@ Z8 was made using the following principles:
 
 [Here the documentation and examples](https://github.com/SergeyMakeev/z8/blob/master/docs/MAIN.md)
 
+[Z8 System Specs](https://github.com/SergeyMakeev/z8/blob/master/docs/SPECS.md)
+
 [Z8 Sandbox](https://sergeymakeev.github.io/z8/index.html?ls=sandbox)
