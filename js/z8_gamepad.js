@@ -39,6 +39,10 @@ function z8_update_gamepad()
 
     var gp = gamepads[0];    
 
+    if (gp == null) {
+        return
+    }
+
     var key_a = is_button_pressed(gp.buttons[0]); 
     var key_b = is_button_pressed(gp.buttons[1]); 
     var key_x = is_button_pressed(gp.buttons[2]); 
