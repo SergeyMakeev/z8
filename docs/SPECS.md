@@ -114,6 +114,8 @@ hlt | wait for interrupt (vsync) | -
 15 | ![#202020](https://placehold.it/15/202020/000000?text=+) `#202020` | Bright Black
 
 ## Z8 Character Set
-
+| Index | Character |
+32 | ![32](https://raw.githubusercontent.com/SergeyMakeev/z8/master/docs/charset/32.png)
+33 | ![33](https://raw.githubusercontent.com/SergeyMakeev/z8/master/docs/charset/32.png)
 
 ## Z8 Sprite Set
