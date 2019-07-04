@@ -115,7 +115,8 @@ hlt | wait for interrupt (vsync) | -
 
 ## Z8 Character Set
 | Index | Character
+--- | ---
 32 | ![32](https://raw.githubusercontent.com/SergeyMakeev/z8/master/docs/charset/32.png)
-33 | ![33](https://raw.githubusercontent.com/SergeyMakeev/z8/master/docs/charset/32.png)
+33 | ![33](https://raw.githubusercontent.com/SergeyMakeev/z8/master/docs/charset/33.png)
 
 ## Z8 Sprite Set
