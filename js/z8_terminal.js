@@ -50,7 +50,7 @@ class Z8_TERMINAL {
 
         this.fonts = [];
 
-        for(var i = 0; i < 15; i++) {
+        for(var i = 0; i <= 15; i++) {
             var simg = new Image();
             simg.src = "img/font_" + i + ".png";
             this.fonts.push(simg);
@@ -79,7 +79,9 @@ class Z8_TERMINAL {
         var dst_width = src_width;
         var dst_height = src_height;
 
-        this.ctx.drawImage(this.fonts[font_color], src_x, src_y, src_width, src_height, x, y, dst_width, dst_height);
+        if (font_color < this.fonts.length) {
+            this.ctx.drawImage(this.fonts[font_color], src_x, src_y, src_width, src_height, x, y, dst_width, dst_height);
+        }
     }
 
     draw_sprite(px, py, spr_number) {
