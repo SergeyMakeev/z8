@@ -1169,6 +1169,10 @@ class Z8CPU {
 
         state.cycle++;
 
+        // generate random number (on every CPU step)
+        var rndNumber = Math.floor(Math.random() * 256);
+        _s(state.ports[31], rndNumber);
+
         log_message("EXECUTE IP: " + _g(state.ip));
         log_message("STATE BEFORE");
         log_message(state);
