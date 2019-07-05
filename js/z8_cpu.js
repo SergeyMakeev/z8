@@ -1802,6 +1802,11 @@ function z8_cpu_step(num_of_cycles, change_editor_line) {
 
 function z8_run() {
 
+    if (cpu.state.stopped == false) {
+        //already in runned state
+        return;
+    }
+
 
     // reset focus (need for keyboard input)
     document.activeElement.blur();
