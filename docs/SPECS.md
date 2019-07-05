@@ -90,7 +90,7 @@ hlt | wait for interrupt (vsync) | -
 28 | write-only | GPU | Sprite #3, position X
 29 | write-only | GPU | Sprite #3, position Y
 30 | write-only | GPU | Sprite #3, sprite index
-31 |  | None | Reserved
+31 | read-only | RND | Random number generator port
 
 ## Z8 Color table (Palette)
 
