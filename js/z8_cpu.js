@@ -544,7 +544,9 @@ class Z8CPU {
         }
         
         // remove all double spaces
-        while(line.indexOf('  ')!=-1) line.replace('  ',' '); 
+        while(line.indexOf('  ') != -1) {
+            line = line.replace('  ',' '); 
+        }
 
         if (line.endsWith(':')) {
             log_message("LABEL LINE");
