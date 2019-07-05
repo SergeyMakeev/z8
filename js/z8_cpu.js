@@ -551,6 +551,7 @@ class Z8CPU {
         if (line.endsWith(':')) {
             log_message("LABEL LINE");
             var label_name = line.slice(0, -1);
+            label_name = label_name.toLowerCase();
 
             if (label_name) {
                 if (label_name.match(/^[a-z0-9_]+$/i) !== null) {
