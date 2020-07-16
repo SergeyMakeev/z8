@@ -220,6 +220,10 @@ Made by [Pipoya](https://pipoya.itch.io/)
 
 ![TODO](https://raw.githubusercontent.com/SergeyMakeev/z8/master/docs/sprites/sprites.png)
 
+## Z8 Screen layout paper sheet
+
+![TODO](https://raw.githubusercontent.com/SergeyMakeev/z8/master/docs/screen_layout_letter_150dpi.png)
+
 
 ## Demo game
 
