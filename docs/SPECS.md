@@ -71,7 +71,7 @@ hlt | wait for interrupt (vsync) | -
 9 | read-only | Keyboard | Keyboard row #9 (LEFT RIGHT UP DOWN ESC ~)
 10 | read-only | Gamepad | Gamepad (LEFT RIGHT UP DOWN BT_A, BT_B, BT_X, BT_Y)
 11 | write-only | GPU | Border and background color index (4 + 4 bits)
-12 |  | None | Reserved
+12 | write-only | GPU | Special palette color index
 13 | write-only | GPU | Line 0 and Line 1 foreground color index
 14 | write-only | GPU | Line 2 and Line 3 foreground color index
 15 | write-only | GPU | Line 4 and Line 5 foreground color index
@@ -91,6 +91,11 @@ hlt | wait for interrupt (vsync) | -
 29 | write-only | GPU | Sprite #3, position Y
 30 | write-only | GPU | Sprite #3, sprite index
 31 | read-only | RND | Random number generator port
+
+
+**Note:**
+In case the MSB of character is not zero, the terminal will use a special palette from port 12 instead of the current line palette.
+In this case, character LSB controls which color (hight or low) from the special palette to use.
 
 ## Z8 Color table (Palette)
 
@@ -211,4 +216,10 @@ hlt | wait for interrupt (vsync) | -
 
 ## Z8 Sprite Set
 
-![TODO](https://raw.githubusercontent.com/SergeyMakeev/z8/master/img/sprites.png)
+![TODO](https://raw.githubusercontent.com/SergeyMakeev/z8/master/docs/sprites/sprites.png)
+
+
+
+## Demo game
+
+[Demo Game](https://sergeymakeev.github.io/z8/index.html?ls=z8_001&code=https://raw.githubusercontent.com/SergeyMakeev/z8/master/practice/game.z8)

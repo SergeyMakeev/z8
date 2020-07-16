@@ -1,0 +1,121 @@
+// dungeon game
+
+// background and border
+out 11, 01110010b
+
+
+// dark-read and yellow
+out 12, 11000000b
+
+// bright-red
+out 13, 10001000b
+out 14, 10001000b
+out 15, 10001000b
+out 16, 10001000b
+out 17, 10001000b
+
+// last two lines are invisible
+out 18, 119
+
+
+// border tiles
+st 0, 108
+st 1, 108
+st 2, 108
+st 3, 108
+st 4, 108
+st 5, 108
+st 6, 108
+st 7, 108
+st 8, 108
+st 9, 108
+st 10, 108
+st 11, 108
+st 12, 108
+st 13, 108
+st 14, 108
+st 15, 108
+st 16, 108
+st 31, 108
+st 32, 108
+st 47, 108
+st 48, 108
+st 63, 108
+st 64, 108
+st 79, 108
+st 80, 108
+st 95, 108
+st 96, 108
+st 111, 108
+st 112, 108
+st 127, 108
+st 128, 108
+st 143, 108
+st 144, 108
+st 145, 108
+st 146, 108
+st 147, 108
+st 148, 108
+st 149, 108
+st 150, 108
+st 151, 108
+st 152, 108
+st 153, 108
+st 154, 108
+st 155, 108
+st 156, 108
+st 157, 108
+st 158, 108
+st 159, 108
+st 159, 108
+
+
+// game-area
+st 18, 236
+st 34, 236
+st 36, 236
+st 50, 236
+st 51, 236
+st 52, 236
+st 37, 236
+st 38, 236
+
+st 40, 236
+st 41, 236
+st 44, 236
+st 45, 236
+st 46, 236
+
+st 54, 236
+st 70, 236
+st 86, 236
+
+// coins
+st 33, 231
+st 35, 231
+
+// 160-255 user data
+// (96 bytes)
+//st 160, 64
+
+
+// avatar
+out 19, 16
+out 20, 16
+out 21, 29
+
+
+// enemy skeleton
+out 22, 48
+out 23, 16
+out 24, 1
+
+// enemy dark skeleton
+out 25, 100
+out 26, 16
+out 27, 5
+
+// enemy pumpkin
+out 28, 120
+out 29, 16
+out 30, 9

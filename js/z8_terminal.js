@@ -86,14 +86,19 @@ class Z8_TERMINAL {
 
     draw_sprite(px, py, spr_number) {
 
-        var size = 128;
+        if (spr_number == 255)
+        {
+            return;
+        }
+
+        var size = 32;
 
         var x = this.ox + (px * 2);
         var y = this.oy + (py * 2);
 
         
-        var src_x = (spr_number % 8) * size;
-        var src_y = Math.floor(spr_number / 8) * size;
+        var src_x = (spr_number % 32) * size;
+        var src_y = Math.floor(spr_number / 32) * size;
         var src_width = size;
         var src_height = size;
         var dst_width = src_width;
@@ -141,10 +146,6 @@ class Z8_TERMINAL {
         //log_always("n:" + num);
         //log_always("sprite end");
 
-        if (num >= 64) {
-            return;
-        }
-
         this.draw_sprite(x, y, num);
     }
 
@@ -155,7 +156,8 @@ class Z8_TERMINAL {
         //log_always(border_color_index)
         var border_color = this.colors[global_color_reg & 15];
 
-        var clear_color = this.colors[(global_color_reg >> 4) & 15];
+        var clear_color_index = (global_color_reg >> 4) & 15;
+        var clear_color = this.colors[clear_color_index];
 
         //log_always(border_color)
 
@@ -179,7 +181,7 @@ class Z8_TERMINAL {
                 reg_val = reg_val >> 4;
             }
 
-            var font_color = (reg_val & 15);
+            var font_color_orig = (reg_val & 15);
 
             //var bkg_color_index = ((line_color >> 4) & 15);
             //this.ctx.fillStyle = this.colors[bkg_color_index];
@@ -188,22 +190,34 @@ class Z8_TERMINAL {
             for(var px = 0; px < 16; px++) {
                 var addr = py * 16 + px;
                 var ascii = _g(cpu.state.memory[addr]);
-                if (ascii >= 32 && ascii <= 128) {
-                    this.draw_chr(px, py, ascii-32, font_color);
-                } else {
+
+                var hb_set = (ascii >= 128);
+                ascii = (ascii & 127);
+
+                var font_color = font_color_orig;
+                if (hb_set) {
+                    // high bit is set (special case) use palette from port #12
+                    // high or low depend from the ascii code low bit
+                    reg_val = _g(cpu.state.ports[12]);
+                    if ((ascii & 1) > 0) {
+                        reg_val = reg_val >> 4;
+                    }
+                    font_color = (reg_val & 15);
+                }
+
+                if (clear_color_index == font_color || ascii < 32) {
                     this.draw_chr(px, py, 0, font_color);
+                } else
+                {
+                    this.draw_chr(px, py, ascii-32, font_color);
                 }
             }
         }
-
-
 
         this.draw_sprite_from_port(19);
         this.draw_sprite_from_port(22);
         this.draw_sprite_from_port(25);
         this.draw_sprite_from_port(28);
-
-
     }
 }
 

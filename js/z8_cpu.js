@@ -36,6 +36,8 @@ const error_runtime_04 = "Bad operand.";
 const error_runtime_05 = "Stack overflow";
 const error_runtime_06 = "Control transfer to invalid address {0}";
 const error_runtime_07 = "Stack underflow";
+const error_runtime_08 = "Can't write to port (read-only)";
+const error_runtime_09 = "Can't read from port (write-only)";
 
 const error_terminated = "Execution terminated.\n\n  R0 = {0}\n  R1 = {1}\n  R2 = {2}\n  R3 = {3}\n  R4 = {4}\n\n  SP = {6}\n  CR = {7}\n\n  IP = {5} (Line: {8})\n\nCycles: {9}\n";
 
@@ -187,12 +189,12 @@ class Z8STATE {
         for(var i = 0; i < 5; i++) {
             this.registers.push(_c(0));
         }        
-
+       
         this.ports = [];
         for(var i = 0; i < 32; i++) {
             this.ports.push(_c(0));
         }        
-
+       
         // border color
         _s(this.ports[11], (7 << 4) | 15);
 
@@ -207,7 +209,6 @@ class Z8STATE {
         _s(this.ports[24], 255);
         _s(this.ports[27], 255);
         _s(this.ports[30], 255);
-
 
 
         this.ip = _c(0);
@@ -234,6 +235,58 @@ class Z8STATE {
 
 class Z8CPU {
     constructor() {
+
+        // 0 = rw port
+        // 1 = read-only port
+        // 2 = write-only port
+        this.portsMode = [];
+
+        for(var i = 0; i < 32; i++) {
+            this.portsMode.push(0);
+        }        
+
+        // keyboard
+        this.portsMode[0] = 1;
+        this.portsMode[1] = 1;
+        this.portsMode[2] = 1;
+        this.portsMode[3] = 1;
+        this.portsMode[4] = 1;
+        this.portsMode[5] = 1;
+        this.portsMode[6] = 1;
+        this.portsMode[7] = 1;
+        this.portsMode[8] = 1;
+        this.portsMode[9] = 1;
+
+        // gamepad
+        this.portsMode[10] = 1;
+
+        // GPU
+        this.portsMode[11] = 2;
+        this.portsMode[12] = 2;
+        this.portsMode[13] = 2;
+        this.portsMode[14] = 2;
+        this.portsMode[15] = 2;
+        this.portsMode[16] = 2;
+        this.portsMode[17] = 2;
+        this.portsMode[18] = 2;
+        this.portsMode[19] = 2;
+        this.portsMode[20] = 2;
+        this.portsMode[21] = 2;
+        this.portsMode[22] = 2;
+        this.portsMode[23] = 2;
+        this.portsMode[24] = 2;
+        this.portsMode[25] = 2;
+        this.portsMode[26] = 2;
+        this.portsMode[27] = 2;
+        this.portsMode[28] = 2;
+        this.portsMode[29] = 2;
+        this.portsMode[30] = 2;
+
+        // RND gen
+        this.portsMode[31] = 1;
+
+
+        
         this.commands = [];
         this.compile_errors = [];
         this.compile_errors_text = "";
@@ -1452,12 +1505,25 @@ class Z8CPU {
 
             case "out":
                 log_message("out");
+
                 if (state.instruction_cycles_passed < io_port_latency_cycles) {
                     state.instruction_cycles_passed++;
                     return "stall";
                 }
 
                 var port_number = this.cpu_get_value(cmd.param0);
+
+                // 0 = r/w
+                // 1 = read only
+                // 2 = write only
+                var portMode = this.portsMode[port_number];
+                if (portMode != 0 && portMode != 2)
+                {
+                    // can't write to read-only port!
+                    this.emit_runtime_error(_g(state.ip), error_runtime_08);
+                    return "exception";
+                }
+
                 var val = this.cpu_get_value(cmd.param1);
                 _s(state.ports[port_number], val);
                 break;
@@ -1468,6 +1534,18 @@ class Z8CPU {
                     return "stall";
                 }
                 var port_number = this.cpu_get_value(cmd.param1);
+
+                // 0 = r/w
+                // 1 = read only
+                // 2 = write only
+                var portMode = this.portsMode[port_number];
+                if (portMode != 0 && portMode != 1)
+                {
+                    // can't read from write-only port!
+                    this.emit_runtime_error(_g(state.ip), error_runtime_09);
+                    return "exception";
+                }
+
                 _s(state.registers[cmd.param0.reg_num], _g(state.ports[port_number]));
                 break;
             case "call":
