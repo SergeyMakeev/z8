@@ -119,3 +119,16 @@ out 27, 5
 out 28, 120
 out 29, 16
 out 30, 9
+
+// fake game loop
+loop:
+
+out 21, 28
+hlt
+out 21, 29
+hlt
+out 21, 30
+hlt
+out 21, 29
+hlt
+jmp loop
