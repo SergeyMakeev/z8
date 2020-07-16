@@ -216,8 +216,9 @@ In this case, character LSB controls which color (hight or low) from the special
 
 ## Z8 Sprite Set
 
-![TODO](https://raw.githubusercontent.com/SergeyMakeev/z8/master/docs/sprites/sprites.png)
+Made by [Pipoya](https://pipoya.itch.io/)
 
+![TODO](https://raw.githubusercontent.com/SergeyMakeev/z8/master/docs/sprites/sprites.png)
 
 
 ## Demo game
