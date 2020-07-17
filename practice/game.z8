@@ -1,4 +1,82 @@
 // dungeon game
+call init
+
+// 160-255 user data
+// (96 bytes)
+
+// player x/y
+#def PX 192
+#def PY 193
+#def PA 194
+
+#def PSPD 8
+
+
+// game loop
+game_loop:
+
+// read keyboard port
+in r0, 9
+
+ld r2, PX
+ld r3, PY
+
+tst r0, 0001b
+jne l1
+//left
+sub r2, PSPD
+l1:
+tst r0, 0010b
+jne l2
+//right
+add r2, PSPD
+l2:
+tst r0, 0100b
+jne l3
+//up
+sub r3, PSPD
+l3:
+tst r0, 1000b
+jne l4
+//dn
+add r3, PSPD
+l4:
+
+// wait loop (keep anim)
+call step_anim
+hlt
+call step_anim
+hlt
+
+jmp game_loop
+
+
+//----------------
+
+// step animation func
+step_anim:
+
+// update sprite pos in GPU/mem
+st PX, r2
+st PY, r3
+out 19, r2
+out 20, r3
+
+
+ld r0, PA
+add r0, 1
+cmp r0, 30
+jle l5
+mov r0, 28
+l5:
+st PA, r0
+
+out 21, r0
+
+ret
+
+
+init:
 
 // music
 out 255, 0
@@ -19,7 +97,6 @@ out 17, 10001000b
 
 // last two lines are invisible
 out 18, 119
-
 
 // border tiles
 st 0, 108
@@ -140,16 +217,11 @@ st 138, 231
 st 142, 231
 
 
-// 160-255 user data
-// (96 bytes)
-//st 160, 64
-
 
 // avatar
 out 19, 16
 out 20, 16
-out 21, 29
-
+out 21, 28
 
 // enemy skeleton
 out 22, 80
@@ -166,25 +238,13 @@ out 28, 192
 out 29, 112
 out 30, 9
 
-hlt
-hlt
-hlt
-hlt
-hlt
-hlt
-hlt
-hlt
+// test-sfx
 out 253, 32
 
-// fake game loop
-loop:
 
-out 21, 28
-hlt
-out 21, 29
-hlt
-out 21, 30
-hlt
-out 21, 29
-hlt
-jmp loop
+st PX, 16
+st PY, 16
+st PA, 28
+
+
+ret

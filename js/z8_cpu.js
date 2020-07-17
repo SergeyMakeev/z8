@@ -6,6 +6,8 @@ const error_jmptarget_04 = "Label name can't be empty.";
 const error_jmptarget_05 = "Label name must be unique. Label '{0}' was already declared at line {1}.";
 const error_jmptarget_06 = "Label '{0}' is not declared.";
 
+const error_call01 = "Can't make a call from the address greater than 255.";
+
 const error_unknown_cmd_01 = "Unknown command '{0}'";
 
 const error_prep_01 = "Invalid preprocessor definition. No value found.";
@@ -38,6 +40,7 @@ const error_runtime_06 = "Control transfer to invalid address {0}";
 const error_runtime_07 = "Stack underflow";
 const error_runtime_08 = "Can't write to port (read-only)";
 const error_runtime_09 = "Can't read from port (write-only)";
+const error_runtime_10 = "Can't push return address to stack";
 
 const error_terminated = "Execution terminated.\n\n  R0 = {0}\n  R1 = {1}\n  R2 = {2}\n  R3 = {3}\n  R4 = {4}\n\n  SP = {6}\n  CR = {7}\n\n  IP = {5} (Line: {8})\n\nCycles: {9}\n";
 
@@ -1094,6 +1097,10 @@ class Z8CPU {
 
             // calls
             case "call":
+                if (line_num > 255) {
+                    this.emit_error(line_num, error_call01);
+                    return;
+                }
                 var param0 = this.get_jmp_target(line_num, 1, cmd[1]);
                 this.emit_opcode(line_num, cmd[0], param0, null);
                 break;
@@ -1242,7 +1249,7 @@ class Z8CPU {
     cpu_get_jmp_target_ip(param) {
         if (param.type == "label") {
             if (!(param.jmp_target in this.labels)) {
-                this.emit_runtime_error(_g(state.ip), error_runtime_03);
+                this.emit_runtime_error(_g(this.state.ip), error_runtime_03);
                 this.cpu_reset();
                 return null;
             }
@@ -1251,7 +1258,7 @@ class Z8CPU {
             return ip;
         }
 
-        this.emit_runtime_error(_g(state.ip), error_runtime_04);
+        this.emit_runtime_error(_g(this.state.ip), error_runtime_04);
         return null;
     }
    
@@ -1686,8 +1693,12 @@ class Z8CPU {
                     this.emit_runtime_error(_g(state.ip), error_runtime_06.format(new_ip));
                     return "exception";
                 }                       
-
-                _s(state.memory[_g(state.sp)], _g(state.ip));
+                var cip = _g(state.ip);
+                if (cip > 255) {
+                    this.emit_runtime_error(_g(state.ip), error_runtime_10);
+                    return "exception";
+                }
+                _s(state.memory[_g(state.sp)], cip);
                 _s(state.sp, _g(state.sp)-1);
                 
                 _s(state.ip, new_ip);
