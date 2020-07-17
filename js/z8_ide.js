@@ -52,6 +52,8 @@ function create_ide() {
 
     log_always("ls: " + get_ls_storage_name());
 
+    console.log("create debug");
+
     var debug_log = ace.edit("debug_log", {
         theme: "ace/theme/dracula",
         mode: "ace/mode/z8_debug",

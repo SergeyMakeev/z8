@@ -119,6 +119,7 @@ function audio() {
             return;
         }
         this.sound.src = music_list[num];
+        this.sound.loop = true;
         this.sound.play();
       }
   
@@ -128,7 +129,7 @@ function audio() {
             return;
         }
         this.sound.src = sound_list[num];
-        //console.log(this.sound.src);
+        this.sound.loop = false;
         this.sound.play();
       }
   

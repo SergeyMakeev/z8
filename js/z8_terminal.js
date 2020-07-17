@@ -21,8 +21,8 @@ class Z8_TERMINAL {
 
         this.canvas = document.createElement("canvas");
         this.canvas.id="terminal_canvas";
-        this.canvas.width="752";
-        this.canvas.height="598";
+        this.canvas.width="700";
+        this.canvas.height="520";
         this.canvas.classList.add("terminal_screen");
         view.appendChild(this.canvas);
 
@@ -59,8 +59,8 @@ class Z8_TERMINAL {
         this.sprites = new Image();
         this.sprites.src = "img/sprites.png";
 
-        this.ox = 55 + 64;
-        this.oy = 63 + 48;
+        this.ox = 90;
+        this.oy = 54;
 
     }
 
