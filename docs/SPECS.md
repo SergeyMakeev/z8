@@ -91,6 +91,9 @@ hlt | wait for interrupt (vsync) | -
 29 | write-only | GPU | Sprite #3, position Y
 30 | write-only | GPU | Sprite #3, sprite index
 31 | read-only | RND | Random number generator port
+253 | write-only | SND | Virtual SND FX#1 port
+254 | write-only | SND | Virtual SND FX#2 port
+255 | write-only | SND | Virtual Music port
 
 
 **Note:**
@@ -223,6 +226,18 @@ Made by [Pipoya](https://pipoya.itch.io/)
 ## Z8 Screen layout paper sheet
 
 ![TODO](https://raw.githubusercontent.com/SergeyMakeev/z8/master/docs/screen_layout_letter_150dpi.png)
+
+## Sound / Music
+
+https://opengameart.org/content/10-8bit-coin-sounds
+https://opengameart.org/content/8-bit-sound-fx
+https://opengameart.org/content/8bit-sfx
+
+https://opengameart.org/content/8-bit-theme-moving-right-along
+https://opengameart.org/content/8-bit-the-hero
+https://opengameart.org/content/8-bit-theme-on-the-offensive
+https://opengameart.org/content/bonus-round-8bit
+
 
 
 ## Demo game

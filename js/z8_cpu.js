@@ -56,6 +56,100 @@ const cpu_cycles_per_frame = 2048;
 const cpu_frames_per_second = 25;
 
 
+var music_list = ["snd/movingrightalong.ogg",
+                "snd/TheHero.ogg",
+                "snd/bonusgame.ogg",
+                "snd/8bit-OnTheOffensive.ogg"];
+
+var sound_list = ["snd/coin1.ogg",
+                "snd/coin2.ogg",
+                "snd/coin3.ogg",
+                "snd/coin4.ogg",
+                "snd/coin5.ogg",
+                "snd/coin6.ogg",
+                "snd/coin7.ogg",
+                "snd/coin8.ogg",
+                "snd/coin9.ogg",
+                "snd/Debris1.ogg",
+                "snd/Debris2.ogg",
+                "snd/Debris3.ogg",
+                "snd/Decompression.ogg",
+                "snd/Driving.ogg",
+                "snd/Explosion1.ogg",
+                "snd/Explosion2.ogg",
+                "snd/Explosion3.ogg",
+                "snd/Explosion4.ogg",
+                "snd/Explosion5.ogg",
+                "snd/Explosion6.ogg",
+                "snd/Parachutes.ogg",
+                "snd/Rustle1.ogg",
+                "snd/Rustle2.ogg",
+                "snd/Rustle3.ogg",
+                "snd/ThrustLow.ogg",
+                "snd/Touch.ogg",
+                "snd/VictoryBig.ogg",
+                "snd/VictorySmall.ogg",
+                "snd/WaterSplash.ogg",
+                "snd/Wind.ogg",
+                "snd/WindParticles.ogg",
+                "snd/s01.ogg",
+                "snd/s02.ogg",
+                "snd/s03.ogg",
+                "snd/s04.ogg",
+                "snd/s05.ogg",
+                "snd/s06.ogg",
+                "snd/s07.ogg",
+                "snd/s08.ogg",
+                "snd/s09.ogg",
+                "snd/s10.ogg",
+                "snd/s11.ogg",
+                "snd/s12.ogg"];
+
+
+function audio() {
+    this.sound = document.createElement("audio");
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+
+    this.play_music = function(num) {
+        //this.sound.pause();
+        if (num >= music_list.length) {
+            return;
+        }
+        this.sound.src = music_list[num];
+        this.sound.play();
+      }
+  
+    this.play_sound = function(num) {
+        //this.sound.pause();
+        if (num >= sound_list.length) {
+            return;
+        }
+        this.sound.src = sound_list[num];
+        //console.log(this.sound.src);
+        this.sound.play();
+      }
+  
+
+    this.stop = function() {
+      this.sound.pause();
+    }
+  }
+
+var music = new audio();
+var sound1 = new audio();
+var sound2 = new audio();
+
+function stop_all_sounds()
+{
+    music.stop();
+    sound1.stop();
+    sound2.stop();
+}
+
+
 function debug_log_clear() {
     var debug_log = ace.edit("debug_log");
     debug_log.session.setValue("", -1)
@@ -460,6 +554,7 @@ class Z8CPU {
     }
 
     emit_runtime_error(line_num, msg) {
+        stop_all_sounds();
         var editor = ace.edit("editor");
 
         var s = this.state;
@@ -481,6 +576,8 @@ class Z8CPU {
     }
 
     emit_terminate(line_num) {
+
+        stop_all_sounds();
 
         // force update terminal (to display current results)
         z8_update_terminal();
@@ -1512,20 +1609,34 @@ class Z8CPU {
                 }
 
                 var port_number = this.cpu_get_value(cmd.param0);
+                var val = this.cpu_get_value(cmd.param1);
 
-                // 0 = r/w
-                // 1 = read only
-                // 2 = write only
-                var portMode = this.portsMode[port_number];
-                if (portMode != 0 && portMode != 2)
-                {
-                    // can't write to read-only port!
-                    this.emit_runtime_error(_g(state.ip), error_runtime_08);
-                    return "exception";
+                // exception - virtual SND ports
+                if (port_number >= 253) {
+                    if (port_number == 253) {
+                        sound1.play_sound(val);
+                    }
+                    if (port_number == 254) {
+                        sound2.play_sound(val);
+                    }
+                    if (port_number == 255) {
+                        music.play_music(val);
+                    }
+                } else {
+                    // 0 = r/w
+                    // 1 = read only
+                    // 2 = write only
+                    var portMode = this.portsMode[port_number];
+                    if (portMode != 0 && portMode != 2)
+                    {
+                        // can't write to read-only port!
+                        this.emit_runtime_error(_g(state.ip), error_runtime_08);
+                        return "exception";
+                    }
+
+                    _s(state.ports[port_number], val);
                 }
 
-                var val = this.cpu_get_value(cmd.param1);
-                _s(state.ports[port_number], val);
                 break;
             case "in":
                 log_message("in");
@@ -1928,6 +2039,7 @@ function z8_run() {
 }
 
 function z8_pause() {
+    stop_all_sounds();    
     ide_set_button_state("run", true);
     ide_set_button_state("pause", false);
 
@@ -1941,6 +2053,7 @@ function z8_pause() {
 
 
 function z8_stop_and_reset() {
+    stop_all_sounds();
     ide_set_button_state("run", true);
     ide_set_button_state("stop", false);
     ide_set_button_state("pause", false);
@@ -1956,7 +2069,7 @@ function z8_stop_and_reset() {
 
 
 function z8_stop() {
-
+    stop_all_sounds();
     ide_set_button_state("run", true);
     ide_set_button_state("stop", false);
     ide_set_button_state("pause", false);

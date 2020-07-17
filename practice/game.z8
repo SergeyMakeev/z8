@@ -1,5 +1,8 @@
 // dungeon game
 
+// music
+out 255, 0
+
 // background and border
 out 11, 01110010b
 
@@ -162,6 +165,16 @@ out 27, 5
 out 28, 192
 out 29, 112
 out 30, 9
+
+hlt
+hlt
+hlt
+hlt
+hlt
+hlt
+hlt
+hlt
+out 253, 32
 
 // fake game loop
 loop:
