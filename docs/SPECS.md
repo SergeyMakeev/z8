@@ -12,37 +12,37 @@ Colors: 16
 
 | Mnemonic | Description | Cycles count
 --- | --- | ---
-mov | move | 1
-ld | load from memory | 2
-st | store to memory | 2
-add | add |1
-ads | add saturated | 1
-sub | subtract | 1
-sbs | subtract saturated | 1
-mul | multiply saturated | 2
-div | divide | 2
-mod | modulo | 2
-sl | shift left | 1
-sr | shift right | 1
-and | bitwise and | 1
-or | bitwise or | 1
-xor | bitwise xor | 1
-cmp | unsigned comparison | 1
-cps | signed comparison | 1
-tst | test (bitwise comparison) | 1
-jmp | jump | 1
-jg | jump if greater | 1
-jge | jump if greater or equal | 1
-jl | jump if less | 1
-jle | jump if less or equal | 1
-je | jump if equal | 1
-jne | jump if not equal | 1
+mov r, r/c | move | 1
+ld r, r/c | load from memory | 2
+st r/c, r/c | store to memory | 2
+add r, r/c | add | 1
+ads r, r/c | add saturated | 1
+sub r, r/c | subtract | 1
+sbs r, r/c | subtract saturated | 1
+mul r, r/c | multiply saturated | 2
+div r, r/c | divide | 2
+mod r, r/c | modulo | 2
+sl r, r/c | shift left | 1
+sr r, r/c | shift right | 1
+and r, r/c | bitwise and | 1
+or r, r/c | bitwise or | 1
+xor r, r/c | bitwise xor | 1
+cmp r, r/c | unsigned comparison | 1
+cps r, r/c | signed comparison | 1
+tst r, r/c | test (bitwise comparison) | 1
+jmp label | jump | 1
+jg label | jump if greater | 1
+jge label | jump if greater or equal | 1
+jl label | jump if less | 1
+jle label | jump if less or equal | 1
+je label | jump if equal | 1
+jne label | jump if not equal | 1
 nop | no operation | 1
-out | io port out | 3
-in | io port in | 3
-push | push to stack | 2
-pop | pop from stack | 2
-call | function call | 3
+out r/c, r/c | io port out | 3
+in r, r/c | io port in | 3
+push r/c| push to stack | 2
+pop r | pop from stack | 2
+call label | function call | 3
 ret | return from function | 3
 hlt | wait for interrupt (vsync) | -
 

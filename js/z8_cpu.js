@@ -1061,7 +1061,11 @@ class Z8CPU {
                     this.emit_error(line_num, error_operands_num.format("IN", 2, (cmd.length - 1)));
                     return;
                 }
-                var param0 = this.get_operand(line_num, 1, cmd[1]);
+                var param0 = this.get_register_operand(cmd[1]);
+                if (param0 == null) {
+                    this.emit_error(line_num, error_operand_06.format(1));
+                    return;
+                }
                 var param1 = this.get_operand(line_num, 2, cmd[2]);
                 this.emit_opcode(line_num, cmd[0], param0, param1);
                 break;
