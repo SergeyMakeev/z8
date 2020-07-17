@@ -24,23 +24,31 @@ ld r3, PY
 tst r0, 0001b
 jne l1
 //left
-sub r2, PSPD
+call step_left
 l1:
 tst r0, 0010b
 jne l2
 //right
-add r2, PSPD
+call step_right
 l2:
 tst r0, 0100b
 jne l3
 //up
-sub r3, PSPD
+call step_up
 l3:
 tst r0, 1000b
 jne l4
 //dn
-add r3, PSPD
+call step_down
 l4:
+
+
+
+// update sprite pos in GPU/mem
+st PX, r2
+st PY, r3
+out 19, r2
+out 20, r3
 
 // wait loop (keep anim)
 call step_anim
@@ -50,17 +58,167 @@ hlt
 
 jmp game_loop
 
+//r2 - x, r3 - y
+//----------------
+step_left:
+push r0
+push r2
+
+//step
+sub r2, PSPD
+// pixel to char addr
+mov r4, r2
+sr r4, 4
+mov r1, r3
+and r1, 00001111b 
+mov r0, r3
+and r0, 11110000b
+add r0, r4
+
+ld r4, r0
+cmp r4, 0
+jne step_left_neg
+cmp r1, 0
+je step_left_pos
+
+add r0, 16
+ld r4, r0
+cmp r4, 0
+jne step_left_neg
+step_left_pos:
+// can step
+pop r4
+pop r0
+ret
+//cant step
+step_left_neg:
+pop r2
+pop r0
+ret
+
+
+//r2 - x, r3 - y
+//----------------
+step_right:
+push r0
+push r2
+
+//step
+add r2, PSPD
+// pixel to char addr
+mov r4, r2
+add r4, 15
+sr r4, 4
+mov r1, r3
+and r1, 00001111b 
+mov r0, r3
+and r0, 11110000b
+add r0, r4
+
+ld r4, r0
+cmp r4, 0
+jne step_right_neg
+cmp r1, 0
+je step_right_pos
+
+add r0, 16
+ld r4, r0
+cmp r4, 0
+jne step_right_neg
+step_right_pos:
+// can step
+pop r4
+pop r0
+ret
+//cant step
+step_right_neg:
+pop r2
+pop r0
+ret
+
+
+//r2 - x, r3 - y
+//----------------
+step_down:
+push r0
+push r3
+
+//step
+add r3, PSPD
+// pixel to char addr
+mov r4, r2
+mov r1, r4
+and r1, 00001111b 
+sr r4, 4
+mov r0, r3
+add r0, 15
+and r0, 11110000b
+add r0, r4
+
+ld r4, r0
+cmp r4, 0
+jne step_down_neg
+cmp r1, 0
+je step_down_pos
+
+add r0, 1
+ld r4, r0
+cmp r4, 0
+jne step_down_neg
+step_down_pos:
+// can step
+pop r4
+pop r0
+ret
+//cant step
+step_down_neg:
+pop r3
+pop r0
+ret
+
+
+//r2 - x, r3 - y
+//----------------
+step_up:
+push r0
+push r3
+
+//step
+sub r3, PSPD
+// pixel to char addr
+mov r4, r2
+mov r1, r4
+and r1, 00001111b 
+sr r4, 4
+mov r0, r3
+and r0, 11110000b
+add r0, r4
+
+ld r4, r0
+cmp r4, 0
+jne step_up_neg
+cmp r1, 0
+je step_up_pos
+
+add r0, 1
+ld r4, r0
+cmp r4, 0
+jne step_up_neg
+step_up_pos:
+// can step
+pop r4
+pop r0
+ret
+//cant step
+step_up_neg:
+pop r3
+pop r0
+ret
 
 //----------------
 
 // step animation func
 step_anim:
-
-// update sprite pos in GPU/mem
-st PX, r2
-st PY, r3
-out 19, r2
-out 20, r3
 
 
 ld r0, PA
@@ -204,17 +362,17 @@ st 137, 236
 
 
 // coins
-st 23, 231
-st 25, 231
-st 30, 231
-st 51, 231
-st 65, 231
-st 71, 231
-st 110, 231
-st 131, 231
-st 136, 231
-st 138, 231
-st 142, 231
+//st 23, 231
+//st 25, 231
+//st 30, 231
+//st 51, 231
+//st 65, 231
+//st 71, 231
+//st 110, 231
+//st 131, 231
+//st 136, 231
+//st 138, 231
+//st 142, 231
 
 
 
