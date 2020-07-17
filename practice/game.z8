@@ -254,7 +254,26 @@ out 16, 10001000b
 out 17, 10001000b
 
 // last two lines are invisible
-out 18, 119
+out 18, 00010001b
+
+// dungeon
+st 180, 68
+st 181, 85
+st 182, 78
+st 183, 71
+st 184, 69
+st 185, 79
+st 186, 78
+
+// hearts
+st 189, 250
+st 190, 250
+st 191, 250
+
+//coin counter
+st 176, 231
+st 177, 48
+
 
 // border tiles
 st 0, 108
