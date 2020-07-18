@@ -91,6 +91,7 @@ table {
 #ide {
     position:         absolute;
     min-width:        280px;
+    min-height:       800px;
     border:           1px solid #999;
     background:       #232323;
     border-radius:    13px;
@@ -106,6 +107,7 @@ table {
 #computer {
     position:         absolute;
     min-width:        280px;
+    min-height:       800px;
     border:           1px solid #999;
     color: #00c000;
     background:       #181818;
